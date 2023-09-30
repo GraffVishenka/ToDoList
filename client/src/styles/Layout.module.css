@@ -1,0 +1,12 @@
+.main {
+  width: 80%;
+  height: 100%;
+  margin-inline: auto;
+}
+
+.table{
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
+    height: 70vh;
+}
