@@ -1,7 +1,6 @@
 const { Op } = require("sequelize");
 const { Todo, User } = require("../models/models");
 const jwt = require("jsonwebtoken");
-const TodoDto = require("../dto/todoDto");
 
 const getToday = () => {
   let date = new Date();
@@ -84,7 +83,6 @@ class TodosController {
     for (let i = 0; i < todos.length; i++) {
       const dt = new Date(cloneTodos[i].deadline)
       
-      console.log(dt.toLocaleDateString())
       cloneTodos[i].responsible = normalResponsible;
       cloneTodos[i].deadline = dt.toLocaleDateString();
     }

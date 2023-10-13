@@ -110,7 +110,17 @@ class UserController {
   }
 
   async current(req, res, next) {
-    res.send("success");
+    const user = req.user;
+    const token = generateJWT(
+      user.id,
+      user.email,
+      user.role,
+      user.firstname,
+      user.surname,
+      user.patronymic,
+      user.department
+    );
+    return res.json({user, token})
   }
 
   

@@ -1,0 +1,194 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  color: #dcdcdc;
+}
+
+html,
+body,
+body > div {
+  height: 100%;
+}
+
+body {
+  background-color: #141414;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  width: 80%;
+  height: 100%;
+  margin-inline: auto;
+}
+
+.header {
+  padding: 20px 0;
+  display: flex;
+  margin-bottom: 20px;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.todoIcon {
+  font-size: 30px;
+  margin-right: 28px;
+}
+
+.leftHeaderBlock {
+  display: inline-flex;
+  align-items: center;
+}
+
+.rightHeaderBlock {
+  display: flex;
+  align-items: center;
+}
+
+h1 {
+  font-weight: 600;
+  font-family: BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 40px;
+  box-sizing: border-box;
+}
+
+.exit {
+  display: contents;
+}
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  height: 60vh;
+  justify-content: center;
+}
+
+.containerLogin {
+  border: 1px solid #303030;
+  border-radius: 10px;
+  width: 30rem;
+  min-width: 300px;
+}
+
+.enter {
+  padding: 20px;
+  border-bottom: 1px solid #303030;
+  font-weight: 500;
+}
+
+.form {
+  padding-top: 35px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.customInput {
+  color: #dcdcdc;
+  background-color: #141414;
+}
+.customInput::placeholder {
+  color: #4f4f4f;
+}
+
+.table {
+  text-align: center;
+  width: 100%;
+  margin-top: 50px;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.table td {
+  padding: 30px;
+}
+
+.table tr:hover{
+ cursor: pointer;
+ border: 1px solid #dddddd;
+ background-color:#4f4f4f;
+}
+
+.modal {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5;
+}
+
+.active {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.4);
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+}
+
+.modal_content {
+  padding: 20px;
+  border-radius: 12px;
+  background-color: rgb(38, 41, 39);
+  height: 70vh;
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.modalBody{
+  margin-top: 10px;
+  display: contents;
+  font-size: 23px;
+}
+
+.modal_content select{
+  color: #141414;
+  font-size: 19px;
+}
+
+.modal_content input{
+  color: #141414;
+  font-size: 19px;
+}
+
+.modal_content data{
+  color: #141414;
+  font-size: 19px;
+}
+
+.modal_content option{
+  color: #141414;
+  font-size: 19px;
+}
+.modal_content textarea{
+  width: 100%;
+  height: 40%;
+  color: #141414;
+  font-size: 15px;
+}
