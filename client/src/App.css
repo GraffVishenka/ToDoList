@@ -153,7 +153,7 @@ h1 {
   padding: 20px;
   border-radius: 12px;
   background-color: rgb(38, 41, 39);
-  height: 70vh;
+  height: 80vh;
   width: 30vw;
   display: flex;
   flex-direction: column;
@@ -187,7 +187,7 @@ h1 {
   font-size: 19px;
 }
 .modal_content textarea{
-  width: 100%;
+  width: 25dvw;
   height: 40%;
   color: #141414;
   font-size: 15px;

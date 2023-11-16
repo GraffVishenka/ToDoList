@@ -11,6 +11,7 @@ export const CustomButton = ({
   icon,
   onClick,
   className,
+  style
 }) => {
   return (
     <Form.Item className={className}>
@@ -22,6 +23,7 @@ export const CustomButton = ({
         danger={danger}
         htmlType={htmlType}
         type={type}
+        style={style}
       >
         {children}
       </Button>

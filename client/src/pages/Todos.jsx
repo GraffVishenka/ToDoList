@@ -1,14 +1,15 @@
 /* eslint-disable no-unused-vars */
 import React, { useContext, useEffect, useState } from "react";
-import { Context } from "..";
 import { Header } from "../components/Header";
 import { observer } from "mobx-react-lite";
+import { fetchTodos } from "../services/TodoService";
 import TodoModal from "../components/modals/TodoModal";
+import { Context } from "..";
+import { CustomButton } from "../components/CustomButton";
 
 export const Todos = observer(() => {
   const { todoStore } = useContext(Context);
   const [modalActive, setModalActive] = useState(false);
-  let todos = [];
   const [todoId, setTodoId] = useState("");
 
   const RowClick = (id) => {
@@ -17,22 +18,23 @@ export const Todos = observer(() => {
   };
 
   useEffect(() => {
-    const data = todoStore.getAllMyTodos();
+    fetchTodos().then((data) => todoStore.setTodo(data));
   }, [todoStore]);
-
-  for (let i = 0; i < sessionStorage.length; i++) {
-    todos.push(JSON.parse(sessionStorage.getItem(`todo${i}`)));
-  }
-
   return (
     <div className="container">
-      <TodoModal active={modalActive} setActive={setModalActive} id = {todoId}/>
+      <TodoModal active={modalActive} setActive={setModalActive} id={todoId} />
       <Header />
+      <div>
+        <CustomButton/>
+        <select>
+          
+        </select>
+      </div>
       <table className="table">
         <tbody>
-          {todos.map((todo) => {
+          {Object.values(todoStore.todo).map((todo) => {
             return (
-              <tr key={todo.id} onClick={() => RowClick(sessionStorage[todo])}>
+              <tr key={todo.id} onClick={() => RowClick(todo.id)}>
                 <td>{todo.header}</td>
                 <td>{todo.priority}</td>
                 <td>{todo.deadline}</td>

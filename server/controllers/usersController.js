@@ -120,10 +120,21 @@ class UserController {
       user.patronymic,
       user.department
     );
-    return res.json({user, token})
+    return res.json({ user, token });
   }
 
-  
+  async getMyUsers(req, res, next) {
+    const {department} = req.params;
+    console.log(department);
+    try {
+      const user = await User.findAll({ where: { department } });
+      res.status(200).json(user);
+    } catch (e) {
+      res
+        .status(500)
+        .json({ message: "Не удалось получить задачи сотрудника" });
+    }
+  }
 }
 
 module.exports = new UserController();
